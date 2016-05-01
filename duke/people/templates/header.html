@@ -10,9 +10,9 @@
 		      <a class="navbar-brand" href="#">Duke Website</a>
 		    </div>
 		    <ul class="nav navbar-nav">
-		      <li class="active"><a href="/input/">Form</a></li>
-		      <li><a href="#">MEM</a></li>
-		      <li><a href="#">MEGN</a></li> 
+		      <li {% if header == "form" %}class="active"{% endif %}><a href="/form/">Form</a></li>
+		      <li {% if header == "mem" %}class="active"{% endif %}><a href="/mem/">MEM</a></li>
+		      <li {% if header == "meng" %}class="active"{% endif %}><a href="/meng/">MEGN</a></li> 
 		    </ul>
 		  </div>
 		</nav>

@@ -24,4 +24,13 @@ def get_name(request):
     else:
         form = StudentForm()
 
-    return render(request, 'form.html', {'form': form})
+    return render(request, 'form.html', {'form': form, "header":"form"})
+
+def get_mem(request):
+    student_list = Student.objects.filter(course = 1)
+    return render(request, 'list.html', {'student_list': student_list, "header":"mem"})
+
+
+def get_meng(request):
+    student_list = Student.objects.filter(course = 2)
+    return render(request, 'list.html', {'student_list': student_list, "header":"meng"})

@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from people.views import get_name
+from people.views import get_name, get_mem, get_meng
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^input/', get_name),
+    url(r'^form/', get_name),
+    url(r'^mem/', get_mem),
+    url(r'^meng/', get_meng),
+       
 ]
