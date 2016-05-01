@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from people.views import get_name
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^input/', get_name),
 ]
