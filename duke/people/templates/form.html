@@ -1,8 +1,33 @@
 
 {% include "header.html" %}
-<form action="/input/" method="post" enctype="multipart/form-data">
+<form action="/input/" method="post" enctype="multipart/form-data" style="margin-left:20%">
     {% csrf_token %}
-    {{ form }}
+    {{ form.non_field_errors }}
+	<div class="fieldWrapper">
+	    {{ form.duke_id.errors }}
+	    <label for="{{ form.duke_id.id_for_label }}">Email subject:</label>
+	    {{ form.duke_id }}
+	</div>
+	<div class="fieldWrapper">
+	    {{ form.student_name.errors }}
+	    <label for="{{ form.student_name.id_for_label }}">Email subject:</label>
+	    {{ form.student_name }}
+	</div>
+	<div class="fieldWrapper">
+	    {{ form.picture.errors }}
+	    <label for="{{ form.picture.id_for_label }}">Email subject:</label>
+	    {{ form.picture }}
+	</div>
+	<div class="fieldWrapper">
+	    {{ form.name_audio.errors }}
+	    <label for="{{ form.name_audio.id_for_label }}">Email subject:</label>
+	    {{ form.name_audio }}
+	</div>
+	<div class="fieldWrapper">
+	    {{ form.course.errors }}
+	    <label for="{{ form.course.id_for_label }}">Email subject:</label>
+	    {{ form.course }}
+	</div>
     <input type="submit" value="Submit" />
 </form>
 {% include "footer.html" %}
