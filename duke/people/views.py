@@ -2,17 +2,22 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 
 from .forms import StudentForm
+from models import Student
 
 def get_name(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
-        form = StudentForm(request.POST)
+        form = StudentForm(request.POST, request.FILES)
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
+            print form.cleaned_data
+            student = Student(**form.cleaned_data)
+            # student.student_name = form.cleaned_data['student_name']; 
+            student.save()
             return HttpResponseRedirect('/thanks/')
 
     # if a GET (or any other method) we'll create a blank form
