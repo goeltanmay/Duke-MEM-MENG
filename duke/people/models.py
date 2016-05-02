@@ -20,7 +20,3 @@ class Student(models.Model):
 	course = models.IntegerField(choices = COURSE_CHOICES, null=False, blank=False)
 	picture = models.ImageField()
 	name_audio = models.FileField()
-	def picturename(self):
-		return os.path.basename(self.picture.name[2:])
-	def audioname(self):
-		return os.path.basename(self.name_audio.name[2:])

@@ -1,33 +1,35 @@
 
 {% include "header.html" %}
-<form action="/form/" method="post" enctype="multipart/form-data" style="margin-left:20%">
+<div class="container-fluid">
+<form action="/form/" method="post" enctype="multipart/form-data" class = "col-sm-3 col-sm-offset-1">
     {% csrf_token %}
     {{ form.non_field_errors }}
-	<div class="fieldWrapper">
+	<div class="form-group">
 	    {{ form.duke_id.errors }}
-	    <label for="{{ form.duke_id.id_for_label }}">Email subject:</label>
+	    <label for="{{ form.duke_id.id_for_label }}">Duke ID</label>
 	    {{ form.duke_id }}
 	</div>
-	<div class="fieldWrapper">
+	<div class="form-group">
 	    {{ form.student_name.errors }}
-	    <label for="{{ form.student_name.id_for_label }}">Email subject:</label>
+	    <label for="{{ form.student_name.id_for_label }}">Name</label>
 	    {{ form.student_name }}
 	</div>
-	<div class="fieldWrapper">
+	<div class="form-group">
 	    {{ form.picture.errors }}
-	    <label for="{{ form.picture.id_for_label }}">Email subject:</label>
+	    <label for="{{ form.picture.id_for_label }}">Picture</label>
 	    {{ form.picture }}
 	</div>
-	<div class="fieldWrapper">
+	<div class="form-group">
 	    {{ form.name_audio.errors }}
-	    <label for="{{ form.name_audio.id_for_label }}">Email subject:</label>
+	    <label for="{{ form.name_audio.id_for_label }}">Audio</label>
 	    {{ form.name_audio }}
 	</div>
-	<div class="fieldWrapper">
+	<div class="form-group">
 	    {{ form.course.errors }}
-	    <label for="{{ form.course.id_for_label }}">Email subject:</label>
+	    <label for="{{ form.course.id_for_label }}">Course</label>
 	    {{ form.course }}
 	</div>
     <input type="submit" value="Submit" />
 </form>
+</div>
 {% include "footer.html" %}

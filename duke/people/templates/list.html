@@ -1,0 +1,11 @@
+{% include "header.html" %}
+
+<div class="container-fluid">
+{% for i in student_list %}
+	<div class="col-sm-3">
+	<div>{{i.student_name}}</div>
+	<div><img src="{{i.picture.url}}" width="200" height="200"></img></div>
+	</div>
+{% endfor %}
+</div>
+{% include "footer.html" %}
