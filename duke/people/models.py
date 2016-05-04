@@ -14,9 +14,16 @@ COURSE_CHOICES = (
 
 # Create your models here.
 
+def validate_file_extension(value):
+	ext = os.path.splitext(value.name)[1]
+	valid_extensions = ['.mp3','.wav']
+	if not ext in valid_extensions:
+		raise ValidationError(u'File not supported!')
+
 class Student(models.Model):
 	duke_id = models.CharField(max_length = 20, null=False, blank=False)
 	student_name = models.CharField(max_length = 200, null=False, blank=False)
 	course = models.IntegerField(choices = COURSE_CHOICES, null=False, blank=False)
 	picture = models.ImageField()
-	name_audio = models.FileField()
+	name_audio = models.FileField(validators=[validate_file_extension])
+

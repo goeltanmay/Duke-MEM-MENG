@@ -4,12 +4,12 @@
 {% for i in student_list %}
 	<div class="col-sm-2">
 		<div class="well centering">
-			<div style="text-align: center;">{{i.student_name}}</div>
+			<div style="text-align: center; font-weight: bold;" >{{i.student_name}}</div>
 			<div><img src="{{i.picture.url}}" class="img-thumbnail centering" style="margin: 0 auto"></img></div>
 			<audio>
 				<source src="{{i.name_audio.url}}" type="audio/mpeg"></source>
 			</audio>
-			<div><img src="/static/play.png" data="{{i.name_audio.url}}" onClick="play(this)"></img></div>
+			<div class="centering" style="text-align:center;">Play Audio</div><div><img class="centering" style="margin-top:10px;"src="/static/play.png" data="{{i.name_audio.url}}" onClick="play(this)" height="24" width="24"></img></div>
 		</div>
 	</div>
 {% endfor %}
