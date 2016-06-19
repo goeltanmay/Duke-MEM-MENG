@@ -10,6 +10,7 @@
 				<source src="{{i.name_audio.url}}" type="audio/mpeg"></source>
 			</audio>
 			<div class="centering" style="text-align:center;">Play Audio</div><div><img class="centering" style="margin-top:10px;"src="/static/play.png" data="{{i.name_audio.url}}" onClick="play(this)" height="24" width="24"></img></div>
+			<p>{{i.description}}</p>
 		</div>
 	</div>
 {% endfor %}

@@ -24,6 +24,7 @@ class Student(models.Model):
 	duke_id = models.CharField(max_length = 20, null=False, blank=False)
 	student_name = models.CharField(max_length = 200, null=False, blank=False)
 	course = models.IntegerField(choices = COURSE_CHOICES, null=False, blank=False)
+	description  = models.CharField(max_length = 142)
 	picture = models.ImageField()
 	name_audio = models.FileField(validators=[validate_file_extension])
 
