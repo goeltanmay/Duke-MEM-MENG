@@ -28,3 +28,5 @@ class Student(models.Model):
 	picture = models.ImageField()
 	name_audio = models.FileField(validators=[validate_file_extension])
 
+	def __unicode__(self):
+		return self.student_name
